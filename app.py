@@ -12,7 +12,6 @@ state_list.insert(0,'Overall India')
 
 st.sidebar.title("India Data Analysis")
 select_option = st.sidebar.selectbox('Select Type',state_list)
-plot = st.sidebar.button('Plot Graph')
 
 def overall():
     st.subheader("Summary")
@@ -161,10 +160,10 @@ def state_analysis(state):
     st.dataframe(district_summary, width='stretch')
 
 
-if plot:
-    if select_option == 'Overall India':
-        overall()
-    else:
-        state_analysis(select_option)
+
+if select_option == 'Overall India':
+    overall()
+else:
+    state_analysis(select_option)
 
 
